@@ -33,6 +33,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Save">
                                     <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0uj-zY-TpQ"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXz-EY-U4m">
                                 <rect key="frame" x="20" y="149" width="353" height="34"/>
@@ -61,9 +64,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="txtEmail" destination="FXz-EY-U4m" id="b9p-HI-e15"/>
-                        <outlet property="txtMobileNo" destination="dzP-kb-mWa" id="lQU-wv-SX9"/>
-                        <outlet property="txtPass" destination="uyo-Tz-r8w" id="Thb-7j-4w0"/>
+                        <outlet property="txtEmail" destination="FXz-EY-U4m" id="JFh-Ze-ebk"/>
+                        <outlet property="txtMobileNo" destination="fi1-aP-DRx" id="B4e-CH-pFn"/>
+                        <outlet property="txtPass" destination="uyo-Tz-r8w" id="g8O-xh-XPh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
