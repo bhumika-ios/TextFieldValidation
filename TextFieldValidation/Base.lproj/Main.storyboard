@@ -60,6 +60,11 @@
                             <constraint firstItem="dzP-kb-mWa" firstAttribute="top" secondItem="fi1-aP-DRx" secondAttribute="bottom" constant="40" id="wtC-nR-wpK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtEmail" destination="FXz-EY-U4m" id="b9p-HI-e15"/>
+                        <outlet property="txtMobileNo" destination="dzP-kb-mWa" id="lQU-wv-SX9"/>
+                        <outlet property="txtPass" destination="uyo-Tz-r8w" id="Thb-7j-4w0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
