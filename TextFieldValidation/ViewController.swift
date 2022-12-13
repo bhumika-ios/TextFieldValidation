@@ -28,6 +28,11 @@ class ViewController: UIViewController {
         } else {
             print("password is not valid")
         }
+        if (txtMobileNo.text?.isPhoneNumber)!{
+            print("Mobile No. is valild")
+        } else {
+            print("Mobile No. is not valid")
+        }
     }
     
 }
