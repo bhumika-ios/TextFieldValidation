@@ -23,6 +23,11 @@ class ViewController: UIViewController {
         }else{
             print("your email is not valid")
         }
+        if (txtPass.text?.isPasswordValid)!{
+            print("password is valid")
+        } else {
+            print("password is not valid")
+        }
     }
     
 }
@@ -42,13 +47,19 @@ extension String{
             }
         }
         var isPasswordValid: Bool {
-            let passwordTest = NSPredicate(format: "self matched %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+            //^ - start anchor
+            //(?=.*[a-z]) - string has one character
+            //(?=.*[$@$#!%*?&])- string has one special character
+            //$ - end anchor
+            // {8,} atlist 8 charecter allow
+            let passRegx = "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}"
+            let passwordTest = NSPredicate(format: "self matches %@", passRegx )
             return passwordTest.evaluate(with: self)
         }
         // email validation
         var isValidEmail: Bool{
-            //{3} means .com for used
-            let emailRegxEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{3}"
+            //{2,3} means .in or .com for used
+            let emailRegxEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
             //predicate means find array- same as filter
             let emailTest = NSPredicate(format: "self matches %@", emailRegxEx)
             return emailTest.evaluate(with: self)
