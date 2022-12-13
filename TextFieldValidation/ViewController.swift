@@ -17,23 +17,34 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnSave(_ sender: Any) {
-        if (txtEmail.text?.isValidEmail)!{
-            print("your email is valid")
-            
-        }else{
-            print("your email is not valid")
-        }
-        if (txtPass.text?.isPasswordValid)!{
+        if(isPass(yrpass: txtPass.text!)){
             print("password is valid")
-        } else {
+        } else{
             print("password is not valid")
         }
-        if (txtMobileNo.text?.isPhoneNumber)!{
-            print("Mobile No. is valild")
-        } else {
-            print("Mobile No. is not valid")
-        }
+//        if (txtEmail.text?.isValidEmail)!{
+//            print("your email is valid")
+//
+//        }else{
+//            print("your email is not valid")
+//        }
+//        if (txtPass.text?.isPasswordValid)!{
+//            print("password is valid")
+//        } else {
+//            print("password is not valid")
+//        }
+//        if (txtMobileNo.text?.isPhoneNumber)!{
+//            print("Mobile No. is valild")
+//        } else {
+//            print("Mobile No. is not valid")
+//        }
     }
+}
+// define function for validation for sample test
+func isPass(yrpass: String) -> Bool{
+ let passRegx = "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}"
+ let passwordTest = NSPredicate(format: "self matches %@", passRegx )
+ return passwordTest.evaluate(with: yrpass)
     
 }
 
@@ -51,16 +62,17 @@ extension String{
                 return false
             }
         }
-        var isPasswordValid: Bool {
-            //^ - start anchor
-            //(?=.*[a-z]) - string has one character
-            //(?=.*[$@$#!%*?&])- string has one special character
-            //$ - end anchor
-            // {8,} atlist 8 charecter allow
-            let passRegx = "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}"
-            let passwordTest = NSPredicate(format: "self matches %@", passRegx )
-            return passwordTest.evaluate(with: self)
-        }
+//        var isPasswordValid: Bool {
+//            //^ - start anchor
+//            //(?=.*[a-z]) - string has one character
+//            //(?=.*[$@$#!%*?&])- string has one special character
+//            //$ - end anchor
+//            // {8,} atlist 8 charecter allow
+//            let passRegx = "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}"
+//            let passwordTest = NSPredicate(format: "self matches %@", passRegx )
+//            return passwordTest.evaluate(with: self)
+//
+//    }
         // email validation
         var isValidEmail: Bool{
             //{2,3} means .in or .com for used
